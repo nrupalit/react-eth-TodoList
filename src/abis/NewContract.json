@@ -23,15 +23,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"notNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/nrupa/Desktop/react-eth-template/src/contracts/NewContract.sol\":\"NewContract\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/nrupa/Desktop/react-eth-template/src/contracts/NewContract.sol\":{\"keccak256\":\"0x47447db1a6df6e0f5c6b30ad27050c9599ccb5ef8cf09afae62d33ac32155105\",\"urls\":[\"bzz-raw://979f16e3fc3ad7d21b7130de233dc28222bc55b7ed59f2686ff3ce05a7893b9e\",\"dweb:/ipfs/QmcuGpyQGyFMVfiPMY1oDQ91evVNpE28AhQ9jZn63Y7cFt\"]}},\"version\":1}",
-  "bytecode": "0x60806040526002600055348015601457600080fd5b5060008081548092919060010191905055506084806100346000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063ce56934414602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6000548156fea265627a7a723158204bbd586a290e1a9bf08d9dfd27c8d9229a585e494c1596d6685dd8bb447e8a9b64736f6c63430005100032",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063ce56934414602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6000548156fea265627a7a723158204bbd586a290e1a9bf08d9dfd27c8d9229a585e494c1596d6685dd8bb447e8a9b64736f6c63430005100032",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"notNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/nrupa/Desktop/react-eth-TodoList/src/contracts/NewContract.sol\":\"NewContract\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/nrupa/Desktop/react-eth-TodoList/src/contracts/NewContract.sol\":{\"keccak256\":\"0x47447db1a6df6e0f5c6b30ad27050c9599ccb5ef8cf09afae62d33ac32155105\",\"urls\":[\"bzz-raw://979f16e3fc3ad7d21b7130de233dc28222bc55b7ed59f2686ff3ce05a7893b9e\",\"dweb:/ipfs/QmcuGpyQGyFMVfiPMY1oDQ91evVNpE28AhQ9jZn63Y7cFt\"]}},\"version\":1}",
+  "bytecode": "0x60806040526002600055348015601457600080fd5b5060008081548092919060010191905055506084806100346000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063ce56934414602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6000548156fea265627a7a723158203579e099ba0475372d867af6377438b90587ce99cf77d38bbe74083d7afba8f064736f6c63430005100032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063ce56934414602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6000548156fea265627a7a723158203579e099ba0475372d867af6377438b90587ce99cf77d38bbe74083d7afba8f064736f6c63430005100032",
   "sourceMap": "27:114:1:-;;;79:1;55:25;;87:51;8:9:-1;5:2;;;30:1;27;20:12;5:2;87:51:1;119:9;;:11;;;;;;;;;;;;;27:114;;;;;;",
   "deployedSourceMap": "27:114:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:114:1;;;;;;;;;;;;;;;;;;;55:25;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;:::o",
   "source": "pragma solidity ^0.5.0;\r\n\r\ncontract NewContract {\r\n    uint public notNumber = 2;\r\n    constructor() public {\r\n        notNumber++;\r\n    }\r\n}",
-  "sourcePath": "C:/Users/nrupa/Desktop/react-eth-template/src/contracts/NewContract.sol",
+  "sourcePath": "C:/Users/nrupa/Desktop/react-eth-TodoList/src/contracts/NewContract.sol",
   "ast": {
-    "absolutePath": "/C/Users/nrupa/Desktop/react-eth-template/src/contracts/NewContract.sol",
+    "absolutePath": "/C/Users/nrupa/Desktop/react-eth-TodoList/src/contracts/NewContract.sol",
     "exportedSymbols": {
       "NewContract": [
         69
@@ -182,7 +182,7 @@
     "src": "0:141:1"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/nrupa/Desktop/react-eth-template/src/contracts/NewContract.sol",
+    "absolutePath": "/C/Users/nrupa/Desktop/react-eth-TodoList/src/contracts/NewContract.sol",
     "exportedSymbols": {
       "NewContract": [
         69
@@ -340,12 +340,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x431E65D1b8634812FFE844fb529C73DB95517D1e",
-      "transactionHash": "0xc1c1b0f95be485c455879e275f6c4d38a4f4616bd71abf3edf2d6b0bce411c15"
+      "address": "0xcBB8a028E791aa35d465507F1cc215d63a056395",
+      "transactionHash": "0xc7699148cf242a35e4579d116b068d1aac90ea6a464aa06491789000ef52557a"
     }
   },
   "schemaVersion": "3.2.3",
-  "updatedAt": "2021-01-25T16:54:34.286Z",
+  "updatedAt": "2021-01-26T14:29:36.176Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

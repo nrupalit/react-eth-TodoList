@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import Web3 from 'web3'
 import './App.css'
-import NewContract from '../abis/NewContract.json';
+import Navbar from './Navbar.js';
+import SocialNetwork from '../abis/SocialNetwork.json';
+import Main from "./Main.js";
 
 
 class App extends Component {
@@ -29,27 +31,41 @@ class App extends Component {
     const accounts = await web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
     const networkId = await web3.eth.net.getId()
+    if(SocialNetwork.networks[networkId]){
+      const socialNetworkData = SocialNetwork.networks[networkId]
+      const socialNetwork = new web3.eth.Contract(SocialNetwork.abi, socialNetworkData.address)
+      this.setState({ socialNetwork })
+      const postCount = await socialNetwork.methods.postCount().call()
+      this.setState({ postCount })
+      for (let i = 1; i <= postCount; i++){
+        const post = await socialNetwork.methods.posts(i).call()
+        this.setState({
+          posts: [...this.state.posts, post]
+        })
+      }
+      console.log(this.state.posts);
+    } else {
+      window.alert('SocialNetwork contract not deployed to detected network')
+    }
     
-    const todoListData = NewContract.networks[networkId]
-    const todoList = new web3.eth.Contract(NewContract.abi, todoListData.address)
-    this.setState({ todoList })
-    const taskCount = await todoList.methods.notNumber().call()
-    console.log(taskCount);
   }
 
 
   constructor(props) {
     super(props)
     this.state = {
-      todoList: {},
-      account: ''
+      socialNetwork: {},
+      account: '',
+      postCount: 0,
+      posts: []
     }
   }
 
   render() {
     return (
       <div>
-        Hello World
+        <Navbar account={this.state.account} />
+        <Main posts={ this.state.posts } />
       </div>
     );
   }
