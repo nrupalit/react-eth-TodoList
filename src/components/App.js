@@ -43,11 +43,30 @@ class App extends Component {
           posts: [...this.state.posts, post]
         })
       }
-      console.log(this.state.posts);
+      console.log(this.state.posts, 'Posts from blockchain');
+      this.setState({
+        posts: this.state.posts.sort((a,b) => b.tipAmount - a.tipAmount )
+      })
+      this.setState({ loading: false})
     } else {
       window.alert('SocialNetwork contract not deployed to detected network')
     }
     
+  }
+
+  createPost(content) {
+    this.setState({ loading: true })
+    this.state.socialNetwork.methods.createPost(content).send({ from: this.state.account })
+    .once('receipt', (receipt) => {
+      this.setState({ loading: false })
+    })
+  }
+
+  tipPosts(id, tipAmount){
+    this.setState({ loading: true })
+    this.state.socialNetwork.methods.tipPost(id).send({ from: this.state.account , value: tipAmount }).once('receipt', (receipt)=>{
+      this.setState({ loading: false })
+    })
   }
 
 
@@ -57,15 +76,25 @@ class App extends Component {
       socialNetwork: {},
       account: '',
       postCount: 0,
-      posts: []
+      posts: [],
+      loading: true
     }
+    this.createPost = this.createPost.bind(this)
+    this.tipPosts = this.tipPosts.bind(this)
   }
 
   render() {
     return (
       <div>
         <Navbar account={this.state.account} />
-        <Main posts={ this.state.posts } />
+        { this.state.loading
+          ? <div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>
+          : <Main
+              posts={this.state.posts}
+              createPost={this.createPost}
+              tipPosts={this.tipPosts}
+            />
+        }
       </div>
     );
   }
